@@ -1,0 +1,151 @@
+<!-- Wireframes: Listing Detail Page, Homepage, Listings Page
+     Lightweight HTML/CSS wireframe. Replace text and images with real data.
+     This file is intentionally minimal and uses semantic sections + annotated boxes.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wireframes - Listing / Home / Listings</title>
+  <style>
+    :root{--gap:16px;--muted:#bbb;--bg:#f7f7f8}
+    *{box-sizing:border-box;font-family:Inter,Arial,Helvetica,sans-serif}
+    body{margin:0;background:var(--bg);color:#111;padding:24px}
+    .page{max-width:1100px;margin:0 auto;background:#fff;padding:20px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+    header.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:2px dashed var(--muted)}
+    header .logo{font-weight:700}
+    .two-col{display:grid;grid-template-columns:2fr 1fr;gap:var(--gap);margin-top:20px}
+    .box{background:#fff;border:2px dashed #ddd;padding:12px;border-radius:6px}
+    .gallery{height:380px;display:flex;gap:8px}
+    .main-photo{flex:3;border:2px dashed #ccc;border-radius:6px;display:flex;align-items:center;justify-content:center}
+    .thumbs{flex:1;display:flex;flex-direction:column;gap:8px}
+    .thumb{flex:1;border:2px dashed #ddd;border-radius:6px;display:flex;align-items:center;justify-content:center}
+    .video{height:180px;margin-top:12px;border:2px dashed #ddd;border-radius:6px;display:flex;align-items:center;justify-content:center}
+    .price{font-size:22px;font-weight:800;margin-bottom:8px}
+    .meta{display:flex;gap:12px;margin-bottom:12px}
+    .meta span{background:#f1f1f1;padding:8px;border-radius:6px}
+    .contact{margin-top:14px;padding:12px;border-radius:8px;background:#fffae6;border:2px solid #ffe29a}
+    footer{margin-top:24px;border-top:2px dashed var(--muted);padding-top:12px;color:var(--muted)}
+
+    /* Listings page */
+    .list-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+    .card{height:220px;border:2px dashed #ddd;border-radius:8px;padding:10px;display:flex;flex-direction:column;justify-content:space-between}
+
+    /* Homepage */
+    .hero{height:240px;border-radius:8px;border:2px dashed #ddd;display:flex;align-items:center;justify-content:center}
+
+    @media(max-width:840px){.two-col{grid-template-columns:1fr}.gallery{flex-direction:column}.thumbs{flex-direction:row;height:70px}.main-photo{height:240px}}
+  </style>
+</head>
+<body>
+  <!-- Listing Detail Page Wireframe -->
+  <div class="page" id="listing-detail">
+    <header class="nav">
+      <div class="logo">Logo</div>
+      <nav>Home | Listings</nav>
+    </header>
+
+    <h1 style="margin-top:18px">Apartment Title / Address</h1>
+
+    <div class="two-col">
+      <!-- Left column -->
+      <div>
+        <div class="box gallery">
+          <div class="main-photo">Main Photo
+            <!-- smaller squares would be thumbnails in real UI -->
+          </div>
+          <div class="thumbs">
+            <div class="thumb">Thumb 1</div>
+            <div class="thumb">Thumb 2</div>
+            <div class="thumb">Thumb 3</div>
+          </div>
+        </div>
+
+        <div class="box video">Video Player</div>
+
+        <div class="box" style="margin-top:12px">Map / Nearby: (optional) — small map/embed box</div>
+      </div>
+
+      <!-- Right column -->
+      <aside class="box">
+        <div class="price">For Rent: $X,XXX / mo</div>
+        <div class="meta">
+          <span>Bedrooms: X</span>
+          <span>Bathrooms: X</span>
+          <span>Size: XXXX sq ft</span>
+        </div>
+
+        <div style="margin-top:8px">Short summary: 1–2 lines of the most important selling points.</div>
+
+        <div class="box" style="margin-top:12px">Detailed Description — paragraph lines to show copy hierarchy.</div>
+
+        <div class="contact">
+          <strong>Contact</strong>
+          <div>Call Us: (555) 123-4567</div>
+          <div style="font-size:12px;margin-top:6px;color:var(--muted)">Schedule a visit button should be prominent here.</div>
+        </div>
+
+        <div style="margin-top:10px;font-size:12px;color:var(--muted)">Share | Save | Report</div>
+      </aside>
+    </div>
+
+    <footer>Copyright 2025 — links | privacy | terms</footer>
+  </div>
+
+  <!-- Listings Page Wireframe -->
+  <div class="page" id="listings" style="margin-top:28px">
+    <header class="nav"><div class="logo">Logo</div><nav>Home | Listings</nav></header>
+    <h2 style="margin-top:18px">Listings</h2>
+
+    <div style="display:flex;gap:12px;align-items:center;margin-bottom:12px">
+      <div class="box" style="flex:1">Search input (placeholder)</div>
+      <div class="box" style="width:220px">Filters (bedrooms, price range, type)</div>
+    </div>
+
+    <div class="list-grid">
+      <div class="card">Image
+        <div>Title — Price</div>
+      </div>
+      <div class="card">Image<div>Title — Price</div></div>
+      <div class="card">Image<div>Title — Price</div></div>
+      <div class="card">Image<div>Title — Price</div></div>
+      <div class="card">Image<div>Title — Price</div></div>
+      <div class="card">Image<div>Title — Price</div></div>
+    </div>
+
+    <footer style="margin-top:18px">Pagination / Load more</footer>
+  </div>
+
+  <!-- Homepage Wireframe -->
+  <div class="page" id="homepage" style="margin-top:28px">
+    <header class="nav"><div class="logo">Logo</div><nav>Home | Listings</nav></header>
+
+    <div class="hero box">Hero / Search block (large) — Call to action</div>
+
+    <section style="margin-top:16px">
+      <h3>Featured Listings</h3>
+      <div class="list-grid" style="margin-top:8px">
+        <div class="card">Featured Item</div>
+        <div class="card">Featured Item</div>
+        <div class="card">Featured Item</div>
+        <div class="card">Featured Item</div>
+      </div>
+    </section>
+
+    <section style="margin-top:16px">
+      <h3>How it works</h3>
+      <div style="display:flex;gap:12px;margin-top:8px">
+        <div class="box" style="flex:1">Search</div>
+        <div class="box" style="flex:1">Visit</div>
+        <div class="box" style="flex:1">Apply / Contact</div>
+      </div>
+    </section>
+
+    <footer style="margin-top:18px">Footer — Copyright 2025</footer>
+  </div>
+
+  <!-- End of wireframe -->
+</body>
+</html>
